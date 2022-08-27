@@ -1,14 +1,18 @@
 import React from "react";
 
 export interface PhotoContainerProperties {
+  title: string
   children: React.ReactNode
 }
 
 export default function PhotoContainer(properties: PhotoContainerProperties) {
   return (
-    <div className="flex justify-center my-5">
-      <div className="grid grid-cols-2 lg:grid-cols-3 grid-flow-row-dense gap-x-8 gap-y-4">
-        {properties.children}
+    <div id={properties.title} className="mt-20 flex flex-col items-center">
+      <span className="mb-5 text-2xl text-gray-400 font-medium tracking-widest">{properties.title}</span>
+      <div className="flex justify-center my-5">
+        <div className="grid grid-cols-2 lg:grid-cols-3 grid-flow-row-dense gap-x-8 gap-y-4">
+          {properties.children}
+        </div>
       </div>
     </div>
   )

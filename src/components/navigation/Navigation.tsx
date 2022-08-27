@@ -24,9 +24,11 @@ interface EntryProperties {
 function Entry(properties: {link: string, name: string}) {
   return (
     <a
-      href={properties.link}
-      className="hover:text-cyan-400 transition ease-in-out duration-100"
-    >
+      href={`#${properties.link}`}
+      className="
+        hover:text-cyan-400 hover:scale-110 hover:-translate-y-1
+        transition ease-in-out duration-100
+     ">
       {properties.name}
     </a>
   )
