@@ -7,7 +7,7 @@ export interface PhotoContainerProperties {
 
 export default function PhotoContainer(properties: PhotoContainerProperties) {
   return (
-    <div id={properties.title} className="mt-20 flex flex-col items-center">
+    <div id={properties.title} className="my-20 flex flex-col items-center">
       <span className="mb-5 text-2xl text-gray-400 font-medium tracking-widest">{properties.title}</span>
       <hr className="border-2 bg-slate-400 w-1/2 mt-1 mb-3"/>
       <div className="flex justify-center my-5">

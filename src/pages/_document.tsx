@@ -2,6 +2,7 @@
 // noinspection HtmlRequiredTitleElement
 
 import { Html, Head, Main, NextScript } from 'next/document'
+import Footer from "../components/footer/Footer";
 
 export default function Document() {
   return (
@@ -15,6 +16,7 @@ export default function Document() {
       <body className="transition ease-in-out duration-500">
         <Main/>
         <NextScript/>
+        <Footer/>
         <div
           id="focus"
           tabIndex={-1}
