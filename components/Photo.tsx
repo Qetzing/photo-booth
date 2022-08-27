@@ -31,6 +31,8 @@ export default function Photo(properties: PhotoProperties) {
       <div className={`
         ${style.gap} ${properties.colorless ? 'grayscale' : ''}
         brightness-125 saturate-150 blur-2xs
+        transition ease-in-out duration-500 hover:delay-700
+        hover:blur-0 hover:brightness-100 hover:saturate-200
       `}>
         <Image
           quality="100"
