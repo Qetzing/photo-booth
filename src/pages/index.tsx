@@ -4,12 +4,20 @@ import * as fs from "fs";
 import PhotoContainer from "../components/PhotoContainer";
 import React from "react";
 import Navigation from "../components/navigation/Navigation";
+import Head from "next/head";
 
 type Photos = Record<string, (PhotoProperties & {id: number})[]>
 
 export default function IndexPage({photos}: {photos: Photos}) {
   return (
     <>
+      <Head>
+        <title>Photo Booth</title>
+        <meta
+          name="description"
+          content="A little, private photo booth of mine. Come in and take a look :)"
+        />
+      </Head>
       <Navigation entries={Object.keys(photos).map(category => {
         return {
           link: category,
