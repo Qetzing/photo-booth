@@ -23,14 +23,17 @@ export default function Photo(properties: PhotoProperties) {
       className={`
       ${style.container}
       flex flex-col items-center
-      bg-white drop-shadow-xl
+      group bg-white drop-shadow-xl
       border rounded-md border-slate-300
-      brightness-125 saturate-150 blur-2xs
-      hover:blur-0 hover:brightness-100 hover:saturate-200
       hover:-translate-y-1 hover:scale-105 hover:z-20 hover:cursor-pointer
       transition ease-in-out duration-500 hover:delay-700
     `}>
-      <div className={`${style.gap} ${properties.colorless ? 'grayscale' : ''}`}>
+      <div className={`
+        ${style.gap} ${properties.colorless ? 'grayscale' : ''}
+        brightness-125 saturate-150 blur-2xs
+        group-hover:blur-0 group-hover:brightness-100 group-hover:saturate-200
+        transition ease-in-out duration-500 group-hover:delay-700
+      `}>
         <Image
           quality="100"
           objectFit="cover"
