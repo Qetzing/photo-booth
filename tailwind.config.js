@@ -5,7 +5,15 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'indie-flower': ['Indie Flower', 'sans-serif']
+      },
+      blur: {
+        '2xs': '0.5px',
+        xs: '1px',
+      },
+    },
   },
   plugins: [],
 }
