@@ -3,16 +3,20 @@ import path from "path";
 import * as fs from "fs";
 import PhotoContainer from "../components/PhotoContainer";
 import React from "react";
+import Navigation from "../components/navigation/Navigation";
 
 type Photos = (PhotoProperties & {id: number})[]
 
 export default function IndexPage({photos}: {photos: Photos}) {
   return (
-    <PhotoContainer>
-      {photos.map(photo => (
-        <Photo key={photo.id} {...photo}/>
-      ))}
-    </PhotoContainer>
+    <>
+      <Navigation entries={[]}/>
+      <PhotoContainer>
+        {photos.map(photo => (
+          <Photo key={photo.id} {...photo}/>
+        ))}
+      </PhotoContainer>
+    </>
   )
 }
 
