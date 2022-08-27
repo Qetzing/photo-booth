@@ -27,7 +27,7 @@ function Entry(properties: {link: string, name: string}) {
       href={`#${properties.link}`}
       className="
         hover:text-cyan-400 hover:scale-110 hover:-translate-y-1
-        transition ease-in-out duration-100
+        transition ease-in-out duration-300
      ">
       {properties.name}
     </a>
