@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import useFocus from "../utils/useFocus";
 
 export interface PhotoProperties {
   src: string
@@ -13,11 +14,19 @@ export type PhotoSize = 'normal' | 'large'
 
 export default function Photo(properties: PhotoProperties) {
   const style = sizeStyles[properties.size]
+  const setFocus = useFocus()
+
   return (
-    <div className={`
+    <div
+      onMouseEnter={() => setFocus(true)}
+      onMouseLeave={() => setFocus(false)}
+      className={`
       ${style.container}
       flex flex-col items-center
-      bg-white rounded-md drop-shadow-xl
+      bg-white drop-shadow-xl
+      border rounded-md border-slate-300
+      transition ease-in-out duration-500 hover:delay-700
+      hover:-translate-y-1 hover:scale-105 hover:z-20 hover:cursor-pointer
     `}>
       <div className={`
         ${style.gap} ${properties.colorless ? 'grayscale' : ''}
