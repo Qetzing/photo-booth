@@ -19,3 +19,21 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@layer utilities {
+  body::-webkit-scrollbar {
+    @apply w-3
+  }
+
+  body::-webkit-scrollbar-track {
+    @apply bg-transparent
+  }
+
+  body::-webkit-scrollbar-thumb {
+    @apply rounded-l-md border border-slate-300 bg-slate-900
+  }
+
+  body::-webkit-scrollbar-thumb:hover {
+    @apply cursor-pointer
+  }
+}
