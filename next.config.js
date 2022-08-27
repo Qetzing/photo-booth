@@ -5,7 +5,7 @@ const nextConfig = {
   output: 'standalone',
   experimental: {
     images: {
-      unoptimized: true,
+      allowFutureImage: true,
     },
   },
 }

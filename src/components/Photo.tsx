@@ -1,5 +1,5 @@
-import Image from 'next/image'
 import useFocus from "../utils/useFocus";
+import Image from "next/future/image";
 
 export interface PhotoProperties {
   src: string
@@ -21,12 +21,12 @@ export default function Photo(properties: PhotoProperties) {
       onMouseEnter={() => setFocus(true)}
       onMouseLeave={() => setFocus(false)}
       className={`
-      ${style.container}
-      flex flex-col items-center
-      group bg-white drop-shadow-xl
-      border rounded-md border-slate-300
-      hover:-translate-y-1 hover:scale-105 hover:z-20 hover:cursor-pointer
-      transition ease-in-out duration-500 hover:delay-700
+        ${style.container}
+        flex flex-col items-center
+        group bg-white drop-shadow-xl
+        border rounded-md border-slate-300
+        hover:-translate-y-1 hover:scale-105 hover:z-20 hover:cursor-pointer
+        transition ease-in-out duration-500 hover:delay-700
     `}>
       <div className={`
         ${style.gap} ${properties.colorless ? 'grayscale' : ''}
@@ -36,9 +36,9 @@ export default function Photo(properties: PhotoProperties) {
       `}>
         <Image
           quality="100"
-          objectFit="cover"
           width={style.width}
           height={style.height}
+          className={`object-cover ${style.size}`}
           src={properties.src}
           alt={properties.alt}
         />
@@ -59,19 +59,22 @@ interface SizeStyle {
   gap: string
   width: number
   height: number
+  size: string
 }
 
 const sizeStyles: Record<PhotoSize, SizeStyle> = {
   normal: {
     container: "w-[332px] h-[404px]",
-    gap: "mt-[17px] ",
+    gap: "mt-[17px]",
     width: 298,
-    height: 298
+    height: 298,
+    size: "w-[298px] h-[298px]"
   },
   large: {
-    container: "w-[696px] h-[404px] col-span-2 justify-self-center",
+    container: "w-[332px] md:w-[696px] h-[404px] md:col-span-2",
     gap: "mt-[17px]",
-    width: 298 * 2 + 32,
-    height: 298
+    width: 628,
+    height: 298,
+    size: "w-[298px] md:w-[628px] h-[298px]"
   }
 }
