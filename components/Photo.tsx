@@ -63,10 +63,4 @@ const sizeStyles: Record<PhotoSize, SizeStyle> = {
     width: 298 * 2 + 32,
     height: 298
   }
-  /*large: {
-    container: "w-[468px] h-[404px] col-span-2  justify-self-center",
-    gap: "mt-[17px]",
-    width: 434,
-    height: 298
-  }*/
 }
