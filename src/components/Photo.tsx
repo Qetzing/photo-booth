@@ -25,15 +25,12 @@ export default function Photo(properties: PhotoProperties) {
       flex flex-col items-center
       bg-white drop-shadow-xl
       border rounded-md border-slate-300
-      transition ease-in-out duration-500 hover:delay-700
+      brightness-125 saturate-150 blur-2xs
+      hover:blur-0 hover:brightness-100 hover:saturate-200
       hover:-translate-y-1 hover:scale-105 hover:z-20 hover:cursor-pointer
+      transition ease-in-out duration-500 hover:delay-700
     `}>
-      <div className={`
-        ${style.gap} ${properties.colorless ? 'grayscale' : ''}
-        brightness-125 saturate-150 blur-2xs
-        transition ease-in-out duration-500 hover:delay-700
-        hover:blur-0 hover:brightness-100 hover:saturate-200
-      `}>
+      <div className={`${style.gap} ${properties.colorless ? 'grayscale' : ''}`}>
         <Image
           quality="100"
           objectFit="cover"
